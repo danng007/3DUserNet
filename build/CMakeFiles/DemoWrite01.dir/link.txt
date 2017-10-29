@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/DemoWrite01.dir/src/examples/DemoWrite01.cpp.o  -o DemoWrite01 -rdynamic libE57RefImpl.a -Wl,-Bstatic -lxerces-c -Wl,-Bdynamic -licuuc -lpthread 

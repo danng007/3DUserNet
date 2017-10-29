@@ -1,0 +1,2 @@
+/usr/bin/ar qc libE57RefImpl.a  CMakeFiles/E57RefImpl.dir/src/refimpl/E57Foundation.cpp.o CMakeFiles/E57RefImpl.dir/src/refimpl/E57FoundationImpl.cpp.o
+/usr/bin/ranlib libE57RefImpl.a

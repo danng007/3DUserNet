@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/e57fields.dir/src/tools/e57fields.cpp.o  -o e57fields -rdynamic libE57RefImpl.a -Wl,-Bstatic -lxerces-c -Wl,-Bdynamic -licuuc -lpthread 

@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/DemoRead01.dir/src/examples/DemoRead01.cpp.o  -o DemoRead01 -rdynamic libE57RefImpl.a -Wl,-Bstatic -lxerces-c -Wl,-Bdynamic -licuuc -lpthread 

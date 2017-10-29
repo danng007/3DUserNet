@@ -1,0 +1,10 @@
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/lib/libE57RefImpl.a
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/bin/e57fields
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/bin/e57xmldump
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/bin/e57unpack
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/bin/e57validate
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/bin/las2e57
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/include/e57/E57Foundation.h
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/./CHANGES.TXT
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/./README.TXT
+/usr/local/E57RefImpl-1.1.unknown-x86_64-linux-gcc54/./E57RefImplConfig.cmake

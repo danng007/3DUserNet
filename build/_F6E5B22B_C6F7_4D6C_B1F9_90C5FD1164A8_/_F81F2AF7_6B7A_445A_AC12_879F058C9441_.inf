@@ -1,0 +1,2 @@
+pointrecord: cartesianX,cartesianY,cartesianZ,intensity,colorRed,colorGreen,colorBlue,cartesianInvalidState
+format:      %g,%g,%g,%g,%d,%d,%d,%d

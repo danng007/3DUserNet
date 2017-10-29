@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/E57Foundation.h
+stdlib.h
+-
+crtdbg.h
+-
+vector
+-
+string
+-
+iostream
+-
+float.h
+-
+boost/shared_ptr.hpp
+-
+boost/weak_ptr.hpp
+-
+boost/enable_shared_from_this.hpp
+-
+boost/cstdint.hpp
+-
+
+/home/wantao/Desktop/3DUserNet/E57RefImpl_src-1.1.312/src/examples/DemoRead01.cpp
+iostream
+-
+E57Foundation.h
+/home/wantao/Desktop/3DUserNet/E57RefImpl_src-1.1.312/src/examples/E57Foundation.h
+

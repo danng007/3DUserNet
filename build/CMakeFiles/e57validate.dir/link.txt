@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/e57validate.dir/src/tools/e57validate.cpp.o  -o e57validate -rdynamic libE57RefImpl.a -Wl,-Bstatic -lxerces-c -Wl,-Bdynamic -licuuc -lpthread 

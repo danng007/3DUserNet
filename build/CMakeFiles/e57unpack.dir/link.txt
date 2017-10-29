@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/e57unpack.dir/src/tools/e57unpack.cpp.o  -o e57unpack -rdynamic libE57RefImpl.a -Wl,-Bstatic -lxerces-c -Wl,-Bdynamic -licuuc -Wl,-Bstatic -lboost_program_options -lboost_system -lboost_thread -lboost_filesystem -lboost_chrono -lboost_date_time -lboost_atomic -Wl,-Bdynamic -lpthread -lpthread 

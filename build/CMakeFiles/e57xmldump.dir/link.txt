@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/e57xmldump.dir/src/tools/e57xmldump.cpp.o  -o e57xmldump -rdynamic libE57RefImpl.a -Wl,-Bstatic -lxerces-c -Wl,-Bdynamic -licuuc -lpthread 

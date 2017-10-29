@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/las2e57.dir/src/tools/las2e57.cpp.o  -o las2e57 -rdynamic libE57RefImpl.a libLASReader.a libtime_conversion.a -Wl,-Bstatic -lxerces-c -Wl,-Bdynamic -licuuc -lpthread 

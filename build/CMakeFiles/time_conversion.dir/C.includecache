@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/time_conversion/basictypes.h
+
+../include/time_conversion/constants.h
+
+../include/time_conversion/gnss_error.h
+stdio.h
+-
+
+../include/time_conversion/time_conversion.h
+basictypes.h
+../include/time_conversion/basictypes.h
+
+/home/wantao/Desktop/3DUserNet/E57RefImpl_src-1.1.312/src/time_conversion/time_conversion.c
+sys/timeb.h
+-
+time.h
+-
+math.h
+-
+gnss_error.h
+/home/wantao/Desktop/3DUserNet/E57RefImpl_src-1.1.312/src/time_conversion/gnss_error.h
+time_conversion.h
+/home/wantao/Desktop/3DUserNet/E57RefImpl_src-1.1.312/src/time_conversion/time_conversion.h
+constants.h
+/home/wantao/Desktop/3DUserNet/E57RefImpl_src-1.1.312/src/time_conversion/constants.h
+windows.h
+-
+
+/usr/include/x86_64-linux-gnu/sys/timeb.h
+features.h
+-
+time.h
+-
+
