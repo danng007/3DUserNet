@@ -61,7 +61,7 @@ find_package(Threads REQUIRED)
 
 # Find the Boost and Xerces libraries
 
-set(Boost_USE_STATIC_LIBS   ON)
+set(Boost_USE_STATIC_LIBS   OFF)
 set(Boost_USE_STATIC_RUNTIME ON)
 set(Boost_USE_MULTITHREADED ON)
 find_package(Boost
@@ -166,19 +166,89 @@ add_library( time_conversion STATIC
 add_executable( DemoWrite01
     src/examples/DemoWrite01.cpp
 )
+
+
 target_link_libraries( DemoWrite01
     E57RefImpl
     ${XML_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}
 )
+
+###############################################################################
+# Installation settings
+
+if(WIN32)
+    set(DEFAULT_LIB_SUBDIR lib)
+    set(DEFAULT_DATA_SUBDIR .)
+    set(DEFAULT_INCLUDE_SUBDIR include)
+
+    if (MSVC)
+        set(DEFAULT_BIN_SUBDIR bin)
+    else()
+        set(DEFAULT_BIN_SUBDIR .)
+    endif()
+else()
+    # Common locatoins for Unix and Mac OS X
+    set(DEFAULT_BIN_SUBDIR bin)
+    set(DEFAULT_LIB_SUBDIR lib)
+    set(DEFAULT_DATA_SUBDIR share/liblas)
+    set(DEFAULT_INCLUDE_SUBDIR include)
+endif()
+
+# Locations are changeable by user to customize layout of libLAS installation
+# (default values are platform-specific)
+set(LIBLAS_BIN_SUBDIR ${DEFAULT_BIN_SUBDIR} CACHE STRING
+        "Subdirectory where executables will be installed")
+set(LIBLAS_LIB_SUBDIR ${DEFAULT_LIB_SUBDIR} CACHE STRING
+        "Subdirectory where libraries will be installed")
+set(LIBLAS_INCLUDE_SUBDIR ${DEFAULT_INCLUDE_SUBDIR} CACHE STRING
+        "Subdirectory where header files will be installed")
+set(LIBLAS_DATA_SUBDIR ${DEFAULT_DATA_SUBDIR} CACHE STRING
+        "Subdirectory where data will be installed")
+
+# Mark *_SUBDIR variables as advanced and dedicated to use by power-users only.
+mark_as_advanced(LIBLAS_BIN_SUBDIR
+        LIBLAS_LIB_SUBDIR LIBLAS_INCLUDE_SUBDIR LIBLAS_DATA_SUBDIR)
+
+# Full paths for the installation
+set(LIBLAS_BIN_DIR ${LIBLAS_BIN_SUBDIR})
+set(LIBLAS_LIB_DIR ${LIBLAS_LIB_SUBDIR})
+set(LIBLAS_INCLUDE_DIR ${LIBLAS_INCLUDE_SUBDIR})
+set(LIBLAS_DATA_DIR ${LIBLAS_DATA_SUBDIR})
+
+###############################################################################
+# Installation commands
+
+install(FILES AUTHORS INSTALL LICENSE.txt README.txt
+        DESTINATION ${LIBLAS_DATA_DIR}/doc)
+
+set(LIBLAS_LIB_NAME las)
+set(LIBLAS_C_LIB_NAME las_c)
+# Name of Chipper library
+set(LASCHIP_LIB_NAME las_chipper )
+# Name of Kernel libray
+set(LASKERNEL_LIB_NAME las_kernel )
+SET( SAMPLE_WRITE sample_write)
+
+
+
+include_directories(liblas/include)
+include_directories(liblas/test/sample)
+
+
 add_executable( DemoRead01
     src/examples/DemoRead01.cpp
-)
+        src/examples/ReadE57Files.cpp src/examples/ReadE57Files.h
+        liblas/test/sample/writeLAS.cpp liblas/test/sample/writeLAS.h)
+
 target_link_libraries( DemoRead01
     E57RefImpl
     ${XML_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}
-)
+        ${Boost_LIBRARIES}
+        ${LIBLAS_LIB_NAME}
+
+        )
 
 #
 # E57-4 Tools
@@ -266,5 +336,5 @@ set (CPACK_PACKAGE_VERSION_PATCH "${${PROJECT_NAME}_BUILD_VERSION}")
 set (CPACK_SYSTEM_NAME "${${PROJECT_NAME}_BUILD_TAG}")
 set (CPACK_GENERATOR "ZIP")
 set (CPACK_STRIP_FILES "TRUE")
-
+add_subdirectory(liblas)
 include (CPack)

@@ -119,13 +119,13 @@ print_help(
 }
 
 class get_at
-    : public static_visitor<variant<double, int64_t> >
+    : public static_visitor<boost::variant<double, int64_t> >
 {
     size_t at;
 public:
     get_at(size_t at_) : at(at_) {}
     template <typename T>
-    variant<double, int64_t> operator()( T & operand ) const
+    boost::variant<double, int64_t> operator()( T & operand ) const
     {
         return operand[at];
     }
@@ -228,7 +228,7 @@ main(
                     StructureNode            prototype(points.prototype());
                     vector<SourceDestBuffer> sdb;
                     const size_t buf_size = 1024;
-                    vector<variant<vector<double>, vector<int64_t> > > buf;
+                    vector<boost::variant<vector<double>, vector<int64_t> > > buf;
                     string pointrecord;
 
                     string comma;
